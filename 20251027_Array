@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    // 二維陣列: 三間分公司，四季的銷售額
+    int sale[3][4] = {{1000, 800, 600, 1500},
+                    {5000, 900, 700, 1200},
+                    {1500, 700, 1500, 2000}};
+    // 計算每間分公司的年銷售總額，並找出最高的分公司
+    int maxsum = 0;
+    int company = 0;
+    for (int i = 0; i < 3 ; i++){
+        int sum = 0;
+        for (int j = 0; j < 4; j++){
+            sum += sale[i][j];
+        }
+        if (sum > maxsum){
+            maxsum = sum;
+            company = i + 1;
+        }
+    }
+    cout << "最高銷售額的分公司為第" << company << "間" << endl;
+    cout << "全年銷售總額為NT$" << maxsum << "元" << endl;
+
+    int maxquarter = 0;
+    int quarter = 0;
+    for (int j = 0; j < 4 ; j++){
+        int sum = 0;
+        for (int i = 0; i < 3; i++){
+            sum += sale[i][j];
+        }
+        if (sum > maxquarter){
+            maxquarter = sum;
+            quarter = j + 1;
+        }
+    }
+    cout << "最高銷售額的季度為第" << quarter << "季" << endl;
+    cout << "該季度銷售總額為" << maxquarter << "元" << endl;
+}
