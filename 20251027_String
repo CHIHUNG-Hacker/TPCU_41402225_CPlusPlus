@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main(){
+    string str, keyword;
+    cout << "請輸入一個字串: ";
+    cin >> str;
+    cout << "您輸入的字串為: " << str << endl;
+    cout << "請輸入要搜尋的關鍵詞";
+    cin >> keyword;
+    cout << "您要搜尋的關鍵詞為: " << keyword << endl;
+    if (!getline(cin, str)) return 0;
+
+    // 把字串轉成大寫再搜尋
+    string up_str = str;
+    transform(up_str.begin(), up_str.end(), up_str.begin(), ::toupper);
+
+    if (up_str.find(keyword) != string::npos) {
+        cout << "成功找到"<< keyword << "字串" << endl;
+    } else {
+        cout << "沒有找到" << keyword << "字串" << endl;
+    }
+    return 0;
+}
