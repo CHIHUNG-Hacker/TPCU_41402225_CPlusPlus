@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+class rectangle {
+    int width;
+    int length;
+    public:
+        void input() {
+            cout << "請輸入長度: ";
+            cin >> length;
+            cout << "請輸入寬度: ";
+            cin >> width;
+        }
+        double perimeter() {
+            return 2 * (width + length);
+        }
+        double area() {
+            return width * length;
+        }
+        void display() {
+            cout << "矩形周長: " << perimeter() << endl;
+            cout << "矩形面積: " << area() << endl;
+        }
+};
+
+int main() {
+    rectangle rect;
+
+    rect.input();
+    cout << "矩形資訊如下:\n";
+    rect.display();
+    return 0;
+}
