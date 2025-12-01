@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+class student {
+    private:
+        int id;
+        string name;
+        int score;
+    public:
+        void input() {
+            cout << "請輸入學生學號: ";
+            cin >> id;
+            cout << "請輸入學生姓名: ";
+            cin >> name;
+            cout << "請輸入學生分數: ";
+            cin >> score;
+        }
+        void display() {
+            cout << "學生學號: " << id << endl;
+            cout << "學生姓名: " << name << endl;
+            cout << "學生分數: " << score << endl;
+        }
+};
+
+int main() {
+    student stu;
+    stu.input();
+    stu.display();
+    return 0;
+}
